@@ -17,7 +17,6 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import "./App.css";
 
 function App({ setCurrentUser, currentUser }) {
-  console.log(currentUser);
   let unsubscribeFromAuth = null;
   useEffect(() => {
     unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -45,7 +44,7 @@ function App({ setCurrentUser, currentUser }) {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/shop" component={ShopPage} />
+        <Route exact path="/shop" component={ShopPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
         <Route
           exact
